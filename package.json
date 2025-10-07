@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "cross-env NODE_ENV=production next build",
-    "build:dev": "cross-env NODE_ENV=production BRANCH=dev next build",
+    "build": "cross-env NODE_ENV=production npx @cloudflare/next-on-pages@1 --outdir dist",
+    "build:dev": "cross-env NODE_ENV=production BRANCH=dev npx @cloudflare/next-on-pages@1 --outdir dist",
     "postbuild": "node -e \"try { require('fs').rmSync('.next/cache', { recursive: true, force: true }); } catch (err) { console.warn('postbuild cleanup failed:', err.message); }\"",
     "start": "next start",
     "export": "next export",
@@ -69,6 +69,10 @@
     "tailwind-scrollbar": "^3.0.0",
     "tailwindcss": "^3.2.7",
     "typescript": "5.1.6",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "@cloudflare/next-on-pages": "1.12.1",
+    "vercel": "^30.0.0",
+    "wrangler": "^3.28.2",
+    "@cloudflare/workers-types": "^4.20240208.0"
   }
 }
