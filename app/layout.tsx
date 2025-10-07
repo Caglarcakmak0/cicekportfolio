@@ -76,8 +76,6 @@ export const metadata: Metadata = {
     category: "technology",
 };
 
-export const runtime = "edge";
-
 type RootLayoutProps = {
     children: ReactNode;
 };

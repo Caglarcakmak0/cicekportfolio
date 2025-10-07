@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "cross-env NODE_ENV=production VERCEL_BUILD_COMMAND=\"npm run vercel-build\" npx @cloudflare/next-on-pages@1 --outdir dist",
-    "build:dev": "cross-env NODE_ENV=production BRANCH=dev VERCEL_BUILD_COMMAND=\"npm run vercel-build\" npx @cloudflare/next-on-pages@1 --outdir dist",
+    "build": "npm run vercel-build && opennextjs-cloudflare build --config wrangler.jsonc --skipNextBuild",
+    "build:dev": "cross-env BRANCH=dev npm run vercel-build && opennextjs-cloudflare build --config wrangler.jsonc --skipNextBuild",
     "vercel-build": "cross-env NODE_ENV=production next build",
     "postbuild": "node -e \"try { require('fs').rmSync('.next/cache', { recursive: true, force: true }); } catch (err) { console.warn('postbuild cleanup failed:', err.message); }\"",
     "start": "next start",
@@ -30,7 +30,7 @@
     "leva": "^0.9.35",
     "lodash": "^4.17.21",
     "meshline": "^3.3.1",
-    "next": "^13.4.12",
+    "next": "^14.2.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-github-calendar": "^4.5.11",
@@ -44,15 +44,18 @@
     "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240208.0",
+    "@opennextjs/cloudflare": "^1.9.1",
     "@types/node": "^20.4.5",
-    "@types/react": "18.0.28",
+    "@types/react": "^18.2.46",
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "@typescript-eslint/parser": "^6.2.0",
     "autoprefixer": "^10.4.13",
     "bun-devtools": "^0.0.2",
     "bun-types": "^0.7.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.45.0",
-    "eslint-config-next": "12.2.3",
+    "eslint-config-next": "^14.2.5",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.3.0",
     "eslint-plugin-import": "^2.26.0",
@@ -70,10 +73,8 @@
     "tailwind-scrollbar": "^3.0.0",
     "tailwindcss": "^3.2.7",
     "typescript": "5.1.6",
-    "cross-env": "^7.0.3",
-    "@cloudflare/next-on-pages": "1.12.1",
     "vercel": "^30.0.0",
-    "wrangler": "^3.28.2",
-    "@cloudflare/workers-types": "^4.20240208.0"
+    "wrangler": "^4.42.1",
+    "esbuild": "^0.23.0"
   }
 }

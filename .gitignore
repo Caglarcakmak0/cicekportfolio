@@ -12,6 +12,7 @@
 /.next/
 /out/
 /dev/
+.open-next/
 
 # production
 /build
