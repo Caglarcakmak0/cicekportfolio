@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "cross-env NODE_ENV=production npx @cloudflare/next-on-pages@1 --outdir dist",
     "build:dev": "cross-env NODE_ENV=production BRANCH=dev npx @cloudflare/next-on-pages@1 --outdir dist",
+    "vercel-build": "cross-env NODE_ENV=production next build",
     "postbuild": "node -e \"try { require('fs').rmSync('.next/cache', { recursive: true, force: true }); } catch (err) { console.warn('postbuild cleanup failed:', err.message); }\"",
     "start": "next start",
     "export": "next export",
