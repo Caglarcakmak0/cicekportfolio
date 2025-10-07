@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Çağlar Çakmak – Özgeçmiş (TR)</title>
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #475569;
+      --rule: #e2e8f0;
+      --accent: #1d4ed8;
+      font-size: 10pt;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      background: #eef2f8;
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    main.sheet {
+      background: #fff;
+      max-width: 960px;
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12);
+      padding: 40px 44px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .masthead {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-bottom: 2px solid var(--rule);
+      padding-bottom: 18px;
+    }
+
+    .masthead h1 {
+      margin: 0;
+      font-size: 26pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .masthead .tagline {
+      margin: 0;
+      font-size: 12pt;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      font-size: 10pt;
+      color: var(--muted);
+    }
+
+    .meta-row a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .meta-row a:hover {
+      text-decoration: underline;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2.4fr) minmax(0, 1fr);
+      gap: 32px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 13pt;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+
+    .block {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 12px 16px;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      background: linear-gradient(145deg, rgba(226, 232, 240, 0.16), rgba(255, 255, 255, 0.6));
+    }
+
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .role {
+      font-weight: 600;
+      font-size: 11pt;
+    }
+
+    .company {
+      font-style: normal;
+      color: var(--muted);
+      font-size: 9.8pt;
+    }
+
+    .item-meta {
+      text-align: right;
+      color: var(--muted);
+      font-size: 9pt;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 140px;
+    }
+
+    .points {
+      margin: 0;
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .points li {
+      margin: 0;
+    }
+
+    .taglist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--rule);
+      background: rgba(59, 130, 246, 0.06);
+      font-size: 9pt;
+      font-weight: 500;
+    }
+
+    .sidebar-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--rule);
+      background: rgba(241, 245, 249, 0.6);
+    }
+
+    .kv {
+      margin: 0;
+      font-size: 10pt;
+    }
+
+    .kv strong {
+      display: block;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .kv span {
+      color: var(--muted);
+      display: block;
+    }
+
+    @media (max-width: 920px) {
+      main.sheet {
+        padding: 32px 28px 36px;
+        border-radius: 16px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .item-meta {
+        text-align: left;
+        min-width: unset;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px;
+      }
+
+      main.sheet {
+        padding: 28px 22px 32px;
+      }
+
+      .masthead h1 {
+        font-size: 22pt;
+      }
+
+      .meta-row {
+        gap: 6px 12px;
+      }
+    }
+
+    @media print {
+      body {
+        background: transparent;
+        padding: 0;
+      }
+
+      main.sheet {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 20mm 18mm;
+      }
+
+      .sidebar-section,
+      .item {
+        background: transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="sheet">
+  <header class="masthead">
+    <h1>Çağlar Çakmak</h1>
+    <p class="tagline">Full-Stack Geliştirici · TypeScript, React, Vue, Next.js</p>
+    <div class="meta-row">
+      <span>Türkiye, İstanbul / Kocaeli</span>
+      <span>caglarcakmak0@icloud.com</span>
+      <span>+90 543 677 18 63</span>
+    </div>
+    <div class="meta-row">
+      <a href="https://www.linkedin.com/in/caglarcakmak0/">linkedin.com/in/caglarcakmak0</a>
+      <a href="https://github.com/CaglarCakmak0/">github.com/CaglarCakmak0</a>
+    </div>
+  </header>
+
+  <section class="layout">
+    <article class="column primary">
+      <section class="block">
+        <h2>Özet</h2>
+        <p>Startuplar ve kurumsal yapılarda 3 yıllık deneyime sahip full-stack geliştirici. TypeScript, React.js, Vue.js, Next.js, Express.js ve Node.js teknolojileriyle yüksek performanslı ürünler geliştiriyor. Yayına alma süreçlerini hızlandırma, UI geliştirme iş akışlarını iyileştirme ve micro-frontend mimarileriyle karmaşık sistemleri ölçeklendirme konularında uzman.</p>
+      </section>
+
+      <section class="block">
+        <h2>Deneyim</h2>
+
+        <div class="item">
+          <div class="item-head">
+            <div>
+              <div class="role">Full-Stack Geliştirici</div>
+              <div class="company">Nik YKS Koçluğu – YKS Sınav Koçluğu Startup'ı</div>
+            </div>
+            <div class="item-meta">
+              <span>İzmir</span>
+              <span>Aralık 2024 – Güncel</span>
+            </div>
+          </div>
+          <ul class="points">
+            <li>Planlama, gerçek zamanlı çalışma odaları, konu/sınav takibi ve kişiselleştirilmiş önerileri birleştiren bir öğrenme platformunu tasarlayıp yayına aldım; sohbet, çevrim içi varlık ve liderlik tablosu özelliklerini geliştirdim.</li>
+            <li>WebSocket odalarında davet/engelleme ve oran sınırlama (rate-limit) akışlarıyla güvenli ve yüksek etkileşimli bir topluluk deneyimi sağladım.</li>
+            <li>Zamanlayıcı ve oturum analitiği entegrasyonu ile p95 izlemesi ve yavaş istek analizi üzerinden performansı optimize ettim; yapay zekâ önerileriyle planlama akışını otomatikleştirerek kullanıçı etkileşimini %100 artırdım, manuel işleri haftada 20 saat azalttım.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-head">
+            <div>
+              <div class="role">Frontend Geliştirici</div>
+              <div class="company">Pixa Software – Türkiye'nin en büyük kurumsal e-ticaret entegrasyon şirketi</div>
+            </div>
+            <div class="item-meta">
+              <span>İzmir</span>
+              <span>Ocak 2025 – Eylül 2025</span>
+            </div>
+          </div>
+          <ul class="points">
+            <li>Vue 3, TypeScript ve SCSS ile geliştirilen modüllerde iyileştirmeler yaparak yükleme süresini %60 azalttım.</li>
+            <li>Kritik race condition sorunlarını giderip kapsamlı kod denetimleri yürüttüm; yüksek öncelikli düzeltmelerle sistem kararlılığını güçlendirdim.</li>
+            <li>CTO ile yeni teknolojileri değerlendirip entegre ederek ölçeklenebilirliği artıran teknik yenilikler uyguladım.</li>
+            <li>15 kişilik çevik ekipte stratejik refaktoring ve en iyi uygulamalarla kod kalitesinin yükseltilmesine liderlik ettim.</li>
+            <li>Çoklu platformda kullanıçı deneyimini geliştiren responsive arayüzler teslim ettim.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-head">
+            <div>
+              <div class="role">Serbest (Freelance) Frontend Geliştirici</div>
+              <div class="company">Armek Mekatronik – Önde gelen mekatronik mühendislik şirketi</div>
+            </div>
+            <div class="item-meta">
+              <span>İzmir</span>
+              <span>Ocak 2025 – Mart 2025</span>
+            </div>
+          </div>
+          <ul class="points">
+            <li>Ürün portföyünün ayrıntılı incelenmesini sağlayan modern ve duyarlı bir web arayüzü geliştirdim.</li>
+            <li>Uygulamaya alınan çöüümlerle ziyaretçi etkileşimini %30 artırdım.</li>
+            <li>Yöneticilerin içerikleri hızla güncelleyebildiği özel bir yönetim paneli tasarlayıp devreye aldım.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-head">
+            <div>
+              <div class="role">E-ticaret – Kişisel Proje</div>
+              <div class="company">MERN tabanlı çok kanallı e-ticaret platformu</div>
+            </div>
+          </div>
+          <ul class="points">
+            <li>İşletmeler için ölçeklenebilir çevrim içi satış ve müşteri yönetimi ıçin ölçeklenebilir ve verimli bir çöüüm sundum; yönetici paneli ile ürün, sipariş ve kampanya süreçlerini otomasyona bağladım.</li>
+          </ul>
+        </div>
+      </section>
+    </article>
+
+    <aside class="column sidebar">
+      <section class="sidebar-section">
+        <h2>Teknik Yığın</h2>
+        <div class="taglist">
+          <span class="chip">TypeScript</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">React</span>
+          <span class="chip">Next.js</span>
+          <span class="chip">Vue.js</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Express.js</span>
+          <span class="chip">Tailwind CSS</span>
+          <span class="chip">SCSS</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">Firestore</span>
+        </div>
+      </section>
+
+      <section class="sidebar-section">
+        <h2>Yetkinlikler</h2>
+        <p class="kv"><strong>Ürün & Teslimat</strong><span>Performans optimizasyonu, micro-frontend mimarileri, CI/CD, SPA & PWA, A/B testleri, API tasarımı ve oran sınırlı yeniden denemeler</span></p>
+        <p class="kv"><strong>Takım Çalışması</strong><span>Agile/Scrum, teknik liderlik, kod incelemesi, mentorluk, paydaş yönetimi</span></p>
+        <p class="kv"><strong>Otomasyon</strong><span>CLI araçları, statik içerik üretimi, veri ayrıştırma & serileştirme, yapay zekâ destekli iş akışları</span></p>
+      </section>
+
+      <section class="sidebar-section">
+        <h2>Eğitim</h2>
+        <p class="kv"><strong>Ege Üniversitesi</strong><span>Bilgisayar Programcılığı (Ön Lisans), 2024 · Türkiye</span></p>
+        <p class="kv"><strong>Stanford University</strong><span>Supervised Machine Learning · Advanced Learning Algorithms, 2024</span></p>
+      </section>
+
+      <section class="sidebar-section">
+        <h2>Diller</h2>
+        <p class="kv"><strong>Türkçe</strong><span>Ana dil</span></p>
+        <p class="kv"><strong>İngilizce</strong><span>Akıcı</span></p>
+        <p class="kv"><strong>Hollandaca</strong><span>Başlangıç</span></p>
+      </section>
+    </aside>
+  </section>
+</main>
+</body>
+</html>

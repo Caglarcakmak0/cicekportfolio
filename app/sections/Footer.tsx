@@ -2,8 +2,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import AnimatedBody from "../animations/AnimatedBody";
 import React from "react";
+import { useI18n } from "../i18n/I18nProvider";
 
 const Footer = () => {
+    const { t } = useI18n();
     return (
         <motion.section
             className=" h-[15vh] w-full  items-center justify-center bg-[#0E1016] pt-10  font-bold uppercase md:h-[20vh] md:py-16 lg:h-[10vh] lg:pt-6 lg:pb-0"
@@ -11,19 +13,16 @@ const Footer = () => {
             animate="animate"
         >
             <motion.div className="mx-auto flex w-[90%] flex-row items-center justify-between text-center text-[12px] text-[#e4ded7] sm:text-[12px] md:text-[14px] lg:max-w-[1440px] lg:text-[14px]">
-                <AnimatedBody
-                    text={"© ÇİÇEK AYDOST 2024"}
-                    className={"m-0 p-0"}
-                />
+                <AnimatedBody text={t("footer.copyright")} className={"m-0 p-0"} />
                 <div className="flex flex-col sm:flex-row  sm:gap-1 md:gap-2">
-                    <AnimatedBody text={"UI/UX Tasarım & Geliştirme"} className={"m-0 p-0"} />
+                    <AnimatedBody text={t("footer.role")} className={"m-0 p-0"} />
                     <Link
-                        href="https://www.linkedin.com/in/cicek-aydost/"
+                        href="https://github.com/CaglarCakmak0"
                         target="_blank"
-                        aria-label="Çiçek Aydost LinkedIn"
+                        aria-label="Çağlar Çakmak GitHub"
                     >
                         <span className="underline underline-offset-2 hover:no-underline">
-                            <AnimatedBody text={"Çiçek Aydost"} className={"m-0 p-0"} />
+                            <AnimatedBody text={t("footer.name")} className={"m-0 p-0"} />
                         </span>{" "}
                     </Link>
                 </div>
@@ -33,3 +32,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

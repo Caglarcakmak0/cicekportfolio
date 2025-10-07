@@ -3,85 +3,57 @@ import Link from "next/link";
 import Container from "../components/container/Container";
 import React from "react";
 
+const NAV_ITEMS = [
+    { href: "#home", label: "ANA SAYFA", ariaLabel: "Scroll to Home Section" },
+    { href: "#about", label: "HAKKIMDA", ariaLabel: "Scroll to About Section" },
+    { href: "#work", label: "PROJELER", ariaLabel: "Scroll to Work Section" },
+    { href: "#tools", label: "BECERİLER", ariaLabel: "Scroll to Tools Section" },
+    { href: "#contact", label: "İLETİŞİM", ariaLabel: "Scroll to Contact Section" },
+] as const;
+
 const NavBar = () => {
-    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-        e.preventDefault();
-        const href = e.currentTarget.href.split("#")[1];
-        window.scrollTo({
-            top: document.getElementById(href)?.offsetTop,
-            left: 0,
-            behavior: "smooth",
-        });
+    const handleScroll = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        event.preventDefault();
+        const targetId = event.currentTarget.href.split("#")[1];
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                left: 0,
+                behavior: "smooth",
+            });
+        }
     };
 
     return (
-        <nav className="nowrap fixed bottom-10 left-0 right-0 z-50 my-0 mx-auto flex items-center justify-center gap-1 px-1 py-1 text-[#e4ded7] sm:w-[383.3px] md:p-2 lg:w-[391.3px]">
-            <Container
-                width="100%"
-                height="50px"
-                color="rgba(255, 255, 255, 0.1)"
-                borderRadius={10}
-                top="0px"
-                left="0px"
-                angle={0}
-            >
-                <nav className="nowrap fixed bottom-30 left-0 right-0 z-50 my-0 mx-auto flex items-center justify-center gap-1 rounded-lg px-1 py-1 text-[#e4ded7] sm:w-[383.3px] md:p-2 lg:w-[391.3px]">
-                    <Link
-                        href="#home"
-                        data-blobity-magnetic="false"
-                        onClick={handleScroll}
-                        aria-label="Scroll to Home Section"
-                    >
-                        <h4 className="py-2 px-2 text-[12px] sm:px-4 sm:text-[14px] md:py-1 md:px-4">
-              ANA SAYFA
-                        </h4>
-                    </Link>
-
-                    <Link
-                        href="#about"
-                        data-blobity-magnetic="false"
-                        onClick={handleScroll}
-                        aria-label="Scroll to About Section"
-                    >
-                        <h4 className="py-2 px-2 text-[12px] sm:px-4 sm:text-[14px] md:py-1 md:px-4">
-              HAKKIMDA
-                        </h4>
-                    </Link>
-
-                    <Link
-                        href="#work"
-                        data-blobity-magnetic="false"
-                        onClick={handleScroll}
-                        aria-label="Scroll to Work Section"
-                    >
-                        <h4 className="py-2 px-2 text-[12px] sm:px-4 sm:text-[14px] md:py-1 md:px-4">
-              PROJELER
-                        </h4>
-                    </Link>
-
-                    <Link
-                        href="#tools"
-                        data-blobity-magnetic="false"
-                        onClick={handleScroll}
-                        aria-label="Scroll to Tools Section"
-                    >
-                        <h4 className="py-2 px-2 text-[12px] sm:px-4 sm:text-[14px] md:py-1 md:px-4">
-              BECERİLER
-                        </h4>
-                    </Link>
-
-                    <Link
-                        href="#contact"
-                        data-blobity-magnetic="false"
-                        onClick={handleScroll}
-                        aria-label="Scroll to Contact Section"
-                    >
-                        <h4 className="py-2 px-2 text-[12px] sm:px-4 sm:text-[14px] md:py-1 md:px-4">
-              İLETİŞİM
-                        </h4>
-                    </Link>
-                </nav>
-            </Container>
+        <nav className="fixed bottom-6 left-0 right-0 z-50 flex justify-center px-3 text-[#e4ded7] sm:bottom-10 sm:px-4">
+            <div className="w-full max-w-lg">
+                <Container
+                    width="100%"
+                    height="auto"
+                    color="rgba(255, 255, 255, 0.1)"
+                    borderRadius={12}
+                    top="0px"
+                    left="0px"
+                    angle={0}
+                >
+                    <ul className="flex flex-wrap items-center justify-center gap-1 px-2 py-2 text-[11px] font-medium uppercase tracking-wide sm:gap-2 sm:text-[12px] md:text-[13px]">
+                        {NAV_ITEMS.map(({ href, label, ariaLabel }) => (
+                            <li key={href}>
+                                <Link
+                                    href={href}
+                                    data-blobity-magnetic="false"
+                                    onClick={handleScroll}
+                                    aria-label={ariaLabel}
+                                    className="block rounded-md px-3 py-2 transition-colors duration-150 hover:bg-white/10 focus:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+                                >
+                                    <span className="whitespace-nowrap">{label}</span>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </Container>
+            </div>
         </nav>
     );
 };

@@ -1,7 +1,9 @@
-import "./globals.css";
+﻿import "./globals.css";
 import React, { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { I18nProvider } from "./i18n/I18nProvider";
+import LanguageToggle from "./components/i18n/LanguageToggle";
 
 const syne = Inter({
     subsets: ["latin"],
@@ -10,61 +12,53 @@ const syne = Inter({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://www.example.com/"),
-    title: "Portfolio template - Eldora UI",
+    metadataBase: new URL("https://www.caglarcakmak.dev/"),
+    title: "Çağlar Çakmak | Full-Stack Developer",
     description:
-    "Eldora UI is a portfolio template built with React, Typescript, Tailwind CSS, and Framer Motion. 100% open-source, and customizable.",
+        "Full-stack geliştirici Çağlar Çakmak; TypeScript, React, Vue ve Next.js ile yüksek performanslı ürünler geliştiriyor. Nik YKS Koçluğu platformunun kurucusu.",
     generator: "Next.js",
-    applicationName: "Portfolio template",
+    applicationName: "Çağlar Çakmak Portfolio",
     keywords: [
-        "Portfolio template",
-        "Eldora UI",
+        "Çağlar Çakmak",
+        "Full-Stack Developer",
+        "TypeScript",
         "React",
-        "developer",
-        "frontend",
-        "nextjs",
-        "react",
-        "frontend developer",
-        "frontend engineer",
-        "creative",
-        "creative developer",
-        "creative engineer",
-        "tech",
-        "software",
-        "software developer",
-        "portfolio",
-        "frontend developer portfolio",
-        "creative developer portfolio",
-        "creative engineer portfolio",
-        "software developer portfolio",
-        "frontend engineer portfolio",
+        "Vue.js",
+        "Next.js",
+        "Express.js",
+        "Node.js",
+        "Nik YKS Koçluğu",
+        "Pixa Software",
+        "Frontend Developer",
+        "Backend",
+        "Yazılım Geliştirici",
+        "Türkiye Yazılım",
+        "Portfolio",
     ],
     colorScheme: "dark",
     openGraph: {
-        title: "Portfolio template - Eldora UI",
+        title: "Çağlar Çakmak | Full-Stack Developer",
         description:
-      "Eldora UI is a portfolio template built with React, Typescript, Tailwind CSS, and Framer Motion. 100% open-source, and customizable.",
-        url: "https://www.eldoraui.site/",
-        siteName: "www.eldoraui.site",
+            "Full-stack geliştirici Çağlar Çakmak; TypeScript, React, Vue ve Next.js ile yüksek performanslı ürünler geliştiriyor. Nik YKS Koçluğu platformunun kurucusu.",
+        url: "https://www.caglarcakmak.dev/",
+        siteName: "Çağlar Çakmak Portfolio",
         images: [
             {
-                url: "./public/metadata.jpg",
+                url: "/metadata.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Portfolio template - Eldora UI",
+                alt: "Çağlar Çakmak Portfolio Önizleme",
             },
         ],
-        locale: "en-US",
+        locale: "tr-TR",
         type: "website",
     },
     twitter: {
         card: "summary_large_image",
-        title: "Portfolio template - Eldora UI",
+        title: "Çağlar Çakmak | Full-Stack Developer",
         description:
-      "Portfolio template - Eldora UI is a portfolio template built with React, Typescript, Tailwind CSS, and Framer Motion. 100% open-source, and customizable.",
-        creator: "@karthikmudunuri",
-        creatorId: "0000000000",
-        images: ["./public/metadata.jpg"],
+            "TypeScript, React, Vue ve Next.js ile ürünler geliştiren full-stack geliştirici. Nik YKS Koçluğu platformunun kurucusu.",
+        images: ["/metadata.jpg"],
     },
     robots: {
         index: true,
@@ -72,8 +66,8 @@ export const metadata: Metadata = {
         nocache: false,
         googleBot: {
             index: true,
-            follow: false,
-            noimageindex: true,
+            follow: true,
+            noimageindex: false,
             "max-video-preview": -1,
             "max-image-preview": "large",
             "max-snippet": -1,
@@ -83,17 +77,21 @@ export const metadata: Metadata = {
 };
 
 type RootLayoutProps = {
-  children: ReactNode;
+    children: ReactNode;
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
-        <html lang="en">
+        <html lang="tr">
             <body
                 className={`${syne.className} scroll-smooth scrollbar-none scrollbar-track-[#0E1016] scrollbar-thumb-[#212531]`}
             >
-                {children}
+                <I18nProvider>
+                    <LanguageToggle />
+                    {children}
+                </I18nProvider>
             </body>
         </html>
     );
 }
+

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+﻿import React, { useEffect } from "react";
 import gsap from "gsap";
 import Logo from "../svg/Logo";
 
@@ -95,10 +95,13 @@ const PreLoader: React.FC = () => {
                     height: "60px",
                 }}
             >
-                <span>Web Developer</span>
+                <span>Çağlar Çakmak</span>
                 <span> / </span>
-               
-                <span className="flex items-center justify-center gap-3"> Building  <Logo width={30} height={30} /> Eldora UI</span>
+                <span className="flex items-center justify-center gap-3">
+                    Full-stack geliştirici
+                    <Logo width={26} height={26} />
+                    Nik YKS Koçluğu
+                </span>
                 <div className="sub hidden"></div>
             </div>
         </div>
@@ -106,3 +109,4 @@ const PreLoader: React.FC = () => {
 };
 
 export default PreLoader;
+

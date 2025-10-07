@@ -7,8 +7,10 @@ import AnimatedWords from "../animations/AnimatedWords";
 import { motion } from "framer-motion";
 import ContactBackground from "../components/background/ContactBackground";
 import React from "react";
+import { useI18n } from "../i18n/I18nProvider";
 
 const Contact = () => {
+    const { t } = useI18n();
     return (
         <motion.section
             className="relative z-10 flex h-[85vh] w-full items-center justify-center overflow-hidden py-16 md:h-[80vh] md:py-20 lg:h-[90vh] lg:pt-0 lg:pb-28"
@@ -22,7 +24,7 @@ const Contact = () => {
                     className={`flex flex-col items-start justify-center ${inter.className} relative w-full sm:items-center lg:max-w-[1440px] `}
                 >
                     <AnimatedWords
-                        title={"iletişim"}
+                        title={t("contact.title")}
                         style={
                             "flex max-w-[250px] flex-col items-start text-left text-[100px] font-extrabold uppercase leading-[0.9em] text-[#e4ded7] sm:max-w-full sm:flex-row sm:items-center sm:justify-center sm:text-center sm:text-[150px] md:text-[150px] lg:text-center lg:text-[120px] xl:text-[250px]"
                         }
@@ -32,31 +34,34 @@ const Contact = () => {
                 <div className="mt-20 flex w-full flex-col items-end justify-center gap-16 sm:mt-32 sm:gap-12 md:mt-40 md:flex-row md:items-start md:justify-between lg:mt-12 lg:max-w-[1440px]">
                     <div className=" flex w-[350px] max-w-[90%] flex-col items-end text-right text-[14px] font-semibold uppercase text-[#e4ded7] sm:w-[350px] sm:text-[14px] md:w-[310px] md:items-start md:text-left md:text-[16px] lg:w-[420px] lg:text-[16px]">
                         <AnimatedBody
-                            text={
-                                "Bir sorunuz, öneriniz, projeniz var mı veya bir şey üzerinde birlikte çalışmak ister misiniz?"
-                            }
+                            text={t("contact.blurb")}
                             className={
                                 "-mb-1 inline-block overflow-hidden pt-1 sm:-mb-2 md:-mb-3 lg:-mb-4"
                             }
                         />
                         <Link
-                            href="mailto:cicekaydost18@gmail.com?subject=Lets%20work%20together!&amp;body=Merhaba%2C%20birlikte%20çalışmak%20istediğim%20bir%20proje%20var...%20En%20kısa%20sürede%20iletişime%20geçebilir%20misiniz?"
+                            href="mailto:caglarcakmak0@icloud.com?subject=Merhaba%20%C3%87a%C4%9Flar&body=Selam%20%C3%87a%C4%9Flar%2C%20birlikte%20%C3%A7al%C4%B1%C5%9Fmak%20istiyorum..."
                             target="_blank"
                             aria-label="Send me an email"
-                            className="mt-1 w-[147px] flex-1 underline underline-offset-2 hover:no-underline sm:mt-2 sm:w-[147px] md:mt-3 md:w-[170px] lg:mt-4"
+                            className="mt-1 w-[200px] flex-1 underline underline-offset-2 hover:no-underline sm:mt-2 sm:w-[200px] md:mt-3 md:w-[220px] lg:mt-4"
                         >
-                            <AnimatedBody text={"Bana e-posta gönder"} className={""} />
+                            <AnimatedBody text={"caglarcakmak0@icloud.com"} className={""} />
                         </Link>
+                        <AnimatedBody
+                            delay={0.1}
+                            text={t("contact.locationLine")}
+                            className="mt-3 normal-case"
+                        />
                     </div>
 
-                    <div className="flex gap-10 text-[16px] font-bold text-[#e4ded7]  sm:gap-14 sm:text-[24px] md:gap-10 md:text-[16px] lg:gap-20 lg:text-[28px]">
+                    <div className="flex gap-10 text-[16px] font-bold text-[#e4ded7] sm:gap-14 sm:text-[24px] md:gap-10 md:text-[16px] lg:gap-20 lg:text-[28px]">
                         <Link
-                            href="https://www.linkedin.com/in/cicek-aydost/"
+                            href="https://www.linkedin.com/in/caglarcakmak0/"
                             target="_blank"
-                            aria-label="View linkedin Profile"
+                            aria-label="LinkedIn profilimi görüntüle"
                         >
                             <AnimatedTitle
-                                text={"LINKEDIN "}
+                                text={t("contact.linkedin")}
                                 className={
                                     "text-[16px] font-bold text-[#e4ded7] sm:text-[20px] md:text-[16px] lg:text-[28px]"
                                 }
@@ -64,7 +69,20 @@ const Contact = () => {
                                 charSpace={"mr-[0.01em]"}
                             />
                         </Link>
-                       
+                        <Link
+                            href="https://github.com/CaglarCakmak0"
+                            target="_blank"
+                            aria-label="GitHub profilimi görüntüle"
+                        >
+                            <AnimatedTitle
+                                text={t("contact.github")}
+                                className={
+                                    "text-[16px] font-bold text-[#e4ded7] sm:text-[20px] md:text-[16px] lg:text-[28px]"
+                                }
+                                wordSpace={"mr-[0.25em]"}
+                                charSpace={"mr-[0.01em]"}
+                            />
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -73,3 +91,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

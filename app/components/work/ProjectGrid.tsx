@@ -1,5 +1,5 @@
-import ProjectCard from "./ProjectCard";
-import {projects, ProjectProps} from "./projectDetails";
+﻿import ProjectCard from "./ProjectCard";
+import { projects, ProjectProps } from "./projectDetails";
 import React from "react";
 
 const ProjectGrid = () => {
@@ -9,7 +9,7 @@ const ProjectGrid = () => {
                 <h4
                     className={`text-[16px] md:text-[20px] lg:text-[34px] ${"text-[#e4ded7]"}`}
                 >
-          Check out some of my work!
+                    Projelerime göz atın!
                 </h4>
             </div>
 
@@ -35,3 +35,4 @@ const ProjectGrid = () => {
 };
 
 export default ProjectGrid;
+

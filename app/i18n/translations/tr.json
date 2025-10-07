@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "title": "Merhaba, ben Çağlar Çakmak.",
+    "subtitle": "Modern teknolojilerle kullanıcı deneyimini önceleyen yaratıcı ve yenilikçi çözümler geliştiriyorum; her projede estetik ve işlevselliği dengelerim."
+  },
+  "about": {
+    "short": "Kullanıcı değeri ve performansı merkeze alan bir Full‑Stack geliştiriciyim. React/Next.js ve Node.js/Express ile uçtan uca web uygulamaları geliştiriyor, TypeScript ile sürdürülebilir ve ölçeklenebilir kod tabanları kuruyorum.",
+    "story1": "Gerçek zamanlı ve ürün odaklı projelerde çalıştım; topluluk deneyimini güçlendiren WebSocket altyapıları, analitik ve modern arayüzler inşa ettim.",
+    "story2": "Ege Üniversitesi Bilgisayar Programcılığı mezunuyum. Öğrenmeye ve paylaşmaya açık, temiz kod ve yalın mimariyi benimseyen bir mühendislik yaklaşımıyla çalışıyorum."
+  },
+  "work": {
+    "title": "Öne Çıkan Projeler"
+  },
+  "github": {
+    "title": "GitHub Katkıları"
+  },
+  "tools": {
+    "title": "KULLANDIĞIM ARAÇLAR",
+    "languages": "Diller",
+    "frameworks": "Framework & Mimari",
+    "ui": "UI Kitleri & Tasarım",
+    "dataDevops": "Veri & DevOps Araçları",
+    "capabilitiesTitle": "Kavramsal Yetkinlikler",
+    "capabilitiesBody": "Performans optimizasyonu, mikro‑frontend mimarileri, CI/CD, SPA & PWA, RESTful API tasarımı, A/B testleri, API entegrasyonları ve oran sınırlı yeniden denemeler, veri ayrıştırma & serileştirme, CLI otomasyonu ve tekrarlanabilir içerik yayını.",
+    "languagesProficiencyTitle": "Dil Yetkinlikleri",
+    "languagesProficiencyBody": "Türkçe (ana dil) • İngilizce (akıcı) • Hollandaca (başlangıç)"
+  },
+  "contact": {
+    "title": "İLETİŞİM",
+    "blurb": "Bir proje, iş birliği ya da topluluğunuz için teknik destek mi arıyorsunuz? Hadi konuşalım.",
+    "locationLine": "Türkiye • İstanbul / Kocaeli • +90 543 677 18 63",
+    "linkedin": "LINKEDIN",
+    "github": "GITHUB"
+  },
+  "footer": {
+    "copyright": "© Çağlar Çakmak 2024",
+    "role": "Full‑Stack Geliştirici",
+    "name": "Çağlar Çakmak"
+  },
+  "toggle": {
+    "label": "Dili Değiştir"
+  }
+}
+

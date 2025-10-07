@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "title": "Hi, I'm Çağlar Çakmak.",
+    "subtitle": "I build creative, user‑centric digital solutions with modern technologies, balancing aesthetics and functionality in every project."
+  },
+  "about": {
+    "short": "I’m a product‑minded Full‑Stack developer. I build end‑to‑end web apps with React/Next.js and Node.js/Express, using TypeScript to keep codebases scalable and maintainable.",
+    "story1": "I’ve worked on real‑time, product‑focused projects; built WebSocket infrastructure, analytics, and modern interfaces that elevate community experiences.",
+    "story2": "Graduate of Ege University (Computer Programming). I value clean code and lean architecture, and I’m committed to continuous learning and sharing."
+  },
+  "work": {
+    "title": "Featured Projects"
+  },
+  "github": {
+    "title": "GitHub Contributions"
+  },
+  "tools": {
+    "title": "TOOLS I USE",
+    "languages": "Languages",
+    "frameworks": "Frameworks & Architecture",
+    "ui": "UI Kits & Design",
+    "dataDevops": "Data & DevOps Tools",
+    "capabilitiesTitle": "Conceptual Competencies",
+    "capabilitiesBody": "Performance optimization, micro‑frontends, CI/CD, SPA & PWA, RESTful API design, A/B testing, API integrations with rate‑limited retries, data parsing & serialization, CLI automation, and repeatable content delivery.",
+    "languagesProficiencyTitle": "Language Proficiency",
+    "languagesProficiencyBody": "Turkish (native) • English (fluent) • Dutch (beginner)"
+  },
+  "contact": {
+    "title": "CONTACT",
+    "blurb": "Looking for help with a project, collaboration, or community tech support? Let’s talk.",
+    "locationLine": "Türkiye • Istanbul / Kocaeli • +90 543 677 18 63",
+    "linkedin": "LINKEDIN",
+    "github": "GITHUB"
+  },
+  "footer": {
+    "copyright": "© Çağlar Çakmak 2024",
+    "role": "Full‑Stack Developer",
+    "name": "Çağlar Çakmak"
+  },
+  "toggle": {
+    "label": "Change language"
+  }
+}
+

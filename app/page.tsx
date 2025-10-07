@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, {useState} from "react";
 import { useEffectOnce, useEventListener } from 'usehooks-ts';
 
@@ -8,10 +8,10 @@ import useBlobity from "./components/blobity/useBlobity";
 import Blur from "./components/overlay/Blur";
 import Color from "./components/overlay/Color";
 
-import NavBar from "./sections/NavBar";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Work from "./sections/Work";
+import Github from "./sections/Github";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 import Tools from "./sections/Tools.tsx";
@@ -59,13 +59,13 @@ export default function Home() {
             <PreLoader />
             <Blur />
             <Color />
-            <NavBar />
             <main
                 className="flex flex-col items-center justify-center bg-black"
             >
                 <Hero />
                 <About />
                 <Work />
+                <Github />
                 <Tools />
                 <Contact />
                 <Footer />

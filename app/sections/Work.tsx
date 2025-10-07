@@ -1,14 +1,16 @@
 import ProjectGrid from "../components/work/ProjectGrid";
 import React from "react";
+import { useI18n } from "../i18n/I18nProvider";
 
 const Work = () => {
+    const { t } = useI18n();
     return (
         <section
             className="relative z-10 flex w-full flex-col items-center justify-center bg-[#0E1016] bg-cover bg-center py-16 md:py-20 lg:py-20"
             id="work"
         >
             <h2 className="mb-10 hidden text-[36px] text-[#e4ded7] md:mb-16 md:text-[42px] lg:mb-16 lg:text-[72px]">
-        Öne Çıkan Projeler
+                {t("work.title")}
             </h2>
 
             <ProjectGrid />
@@ -17,3 +19,4 @@ const Work = () => {
 };
 
 export default Work;
+

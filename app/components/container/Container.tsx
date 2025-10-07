@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import Grain from "../overlay/Grain";
 import "./container.css";
-import {useEventListener} from "usehooks-ts";
+import { useEventListener } from "usehooks-ts";
 
 type CustomCSSProperties = React.CSSProperties & {
     "--width"?: string | number;
@@ -15,7 +15,8 @@ type CustomCSSProperties = React.CSSProperties & {
     "--is-hovered"?: number;
     "--cursor-x"?: string;
     "--cursor-y"?: string;
-    "--angle"?: number;
+    "--angle"?: string | number;
+    "--spotlight-color"?: string;
 };
 
 type ContainerProps = {
@@ -51,7 +52,32 @@ type ContainerProps = {
     baseFrequency?: string;
     numOctaves?: number;
     // other
+    position?: "relative" | "absolute";
     children: React.ReactNode;
+};
+
+const resolveSize = (value?: string | number, fallback?: string) => {
+    if (typeof value === "number") {
+        return `${value}px`;
+    }
+
+    if (typeof value === "string" && value.trim().length > 0) {
+        return value;
+    }
+
+    return fallback ?? "100%";
+};
+
+const resolveOffset = (value?: string | number) => {
+    if (typeof value === "number") {
+        return `${value}px`;
+    }
+
+    if (typeof value === "string" && value.trim().length > 0) {
+        return value;
+    }
+
+    return "0px";
 };
 
 const Container: React.FC<ContainerProps> = ({
@@ -67,13 +93,14 @@ const Container: React.FC<ContainerProps> = ({
     angle,
     baseFrequency = "7",
     numOctaves = 3,
+    position = "relative",
     children,
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [isHovered, setIsHovered] = useState(false);
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
-    useEventListener('mousemove', (e) => {
+    useEventListener("mousemove", (e) => {
         const rect = containerRef.current?.getBoundingClientRect();
         if (rect) {
             const { left: containerLeft, top: containerTop } = rect;
@@ -82,6 +109,13 @@ const Container: React.FC<ContainerProps> = ({
             setCursorPosition({ x, y });
         }
     });
+
+    const resolvedWidth = resolveSize(width, "100%");
+    const resolvedHeight = resolveSize(height, "100%");
+    const resolvedTop = resolveOffset(top);
+    const resolvedLeft = resolveOffset(left);
+    const resolvedBorderRadius =
+        typeof borderRadius === "number" ? `${borderRadius}px` : borderRadius ?? "0px";
 
     const getGradientStyle = () => {
         if (typeof angle === "number" && !isNaN(angle)) {
@@ -92,23 +126,39 @@ const Container: React.FC<ContainerProps> = ({
 
     const blurClasses = blur ? "backdrop-blur-[64px]" : "";
 
+    const grainWidthValue =
+        typeof width === "number" ? width : resolvedWidth === "auto" ? "100%" : resolvedWidth;
+    const grainHeightValue =
+        typeof height === "number" ? height : resolvedHeight === "auto" ? "100%" : resolvedHeight;
+
+    const containerClasses = [
+        "container",
+        blurClasses,
+        position === "absolute" ? "container--absolute" : "",
+    ]
+        .filter(Boolean)
+        .join(" ");
+
     return (
         <div
-            className={`container ${blurClasses}`}
-            style={{
-                "--angle": typeof angle === "number" ? `${angle}deg` : angle,
-                "--width": typeof width === "number" ? `${width}px` : width,
-                "--height": typeof height === "number" ? `${height}px` : height,
-                "--gradient": getGradientStyle(),
-                "--spotlight-color": spotlightColor,
-                "--accent-color": accentColor,
-                "--border-radius": `${borderRadius}px`,
-                "--top": `${top}px`,
-                "--left": `${left}px`,
-                "--is-hovered": isHovered ? 0.5 : 0, // TODO: Clean this up later. Not Important right now.
-                "--cursor-x": `${cursorPosition.x}px`,
-                "--cursor-y": `${cursorPosition.y}px`,
-            } as unknown as CustomCSSProperties}
+            className={containerClasses}
+            style={
+                {
+                    position,
+                    "--angle": typeof angle === "number" ? `${angle}deg` : angle,
+                    "--width": resolvedWidth,
+                    "--height": resolvedHeight,
+                    "--gradient": getGradientStyle(),
+                    "--spotlight-color": spotlightColor,
+                    "--accent-color": accentColor,
+                    "--border-radius": resolvedBorderRadius,
+                    "--top": resolvedTop,
+                    "--left": resolvedLeft,
+                    "--is-hovered": isHovered ? 0.5 : 0,
+                    "--cursor-x": `${cursorPosition.x}px`,
+                    "--cursor-y": `${cursorPosition.y}px`,
+                } as CustomCSSProperties
+            }
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onFocus={() => setIsHovered(true)}
@@ -121,7 +171,7 @@ const Container: React.FC<ContainerProps> = ({
             <div className="border" />
             <div className="border-highlight" />
             <div className="grain">
-                <Grain baseFrequency={baseFrequency} numOctaves={numOctaves} w={width} h={height}/>
+                <Grain baseFrequency={baseFrequency} numOctaves={numOctaves} w={grainWidthValue} h={grainHeightValue} />
             </div>
         </div>
     );
