@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "cross-env NODE_ENV=production next build",
     "build:dev": "cross-env NODE_ENV=production BRANCH=dev next build",
+    "postbuild": "node -e \"try { require('fs').rmSync('.next/cache', { recursive: true, force: true }); } catch (err) { console.warn('postbuild cleanup failed:', err.message); }\"",
     "start": "next start",
     "export": "next export",
     "lint": "next lint",
