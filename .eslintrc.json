@@ -83,7 +83,7 @@
     "unicorn/throw-new-error": "error",
     "prefer-const": "off",
     "array-callback-return": ["error", { "allowImplicit": true }],
-    "indent": ["error", 4, { "SwitchCase": 1 }],
+    "indent": "off",
     "semi": ["error", "always"],
     "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/unbound-method": "off",
@@ -95,6 +95,7 @@
     "@typescript-eslint/no-unused-vars": ["warn", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
     "@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": false }],
     "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
     "@typescript-eslint/restrict-template-expressions": ["error", {
       "allowNumber": true,
       "allowBoolean": true,
