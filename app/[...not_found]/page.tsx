@@ -1,5 +1,11 @@
 import { notFound } from "next/navigation";
 
-export default function NotFoundCatchAll() {
+export const runtime = "edge";
+
+const CatchAllRoute = () => {
     notFound();
-}
+    return null;
+};
+
+export default CatchAllRoute;
+
