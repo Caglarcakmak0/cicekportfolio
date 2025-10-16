@@ -2,6 +2,10 @@
   "name": "caglar-cakmak-portfolio",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=20.19.0",
+    "npm": ">=9.6.7"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "npm run vercel-build && opennextjs-cloudflare build --config wrangler.jsonc --skipNextBuild",
